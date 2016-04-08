@@ -17,3 +17,6 @@ https://docs.google.com/presentation/d/1gQyPqirFqX-o5z9DUBfU0sNMPeKLkrqgLCxlR3oE
 Word Doc of initial release plan on Google Docs:
 https://docs.google.com/document/d/1rVmr_9q1shaeTMGO8x8knxlVR_NAsB9we5suiWivGqI/edit
 
+
+Prediction models:
+Linear regression -> Weighted average (Recent is higher weighted) -> GARCH
