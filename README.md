@@ -2,7 +2,7 @@
 
 For Stock Market Analysis
 
-Team Members: Sean Sjahrial, Johnnie Chang, Kenny Wong and Aishni Parab.
+Team Members: Sean Sjahrial, Johnnie Chang, Kenny Wong and Derrick Do.
 
 Blash ("Buy Low and Sell High") is a web app that aims to:
 
