@@ -1,0 +1,17 @@
+1. As an investor, I want to have a visual overview of the stock prices over a given timeframe, because I would like to use past behavior to predict future returns. (8 points)
+
+- Display a chart in Web2Py.
+- Get information and display it on chart.
+- Add fields to specify length of time.
+
+2. As a stock portfolio manager, I want to input the stocks in my portfolio and see projections for it, so that I can make informed buying and selling decisions. (5 points)
+
+- Create a data structure to hold stocks.
+- Devise a way to project future price of stocks.
+- Display total projection of all stocks in a portfolio
+
+3. As a beginning investor, I’d like to see what my potential  capital gain given a principal value (how much I make with some amount), in order to conveniently see how much money I could make. (2 points)
+
+- Figure out formulas to implement in calculator
+- Create text fields for input values
+- Create button to perform the calculation
