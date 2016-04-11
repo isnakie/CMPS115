@@ -19,6 +19,7 @@ https://docs.google.com/document/d/1rVmr_9q1shaeTMGO8x8knxlVR_NAsB9we5suiWivGqI/
 
 
 Prediction models:
+
 Linear regression -> Weighted average (Recent is higher weighted) -> GARCH
 
 Reason we are not planning to use SQL:
