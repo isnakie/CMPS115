@@ -6,7 +6,8 @@ Team Members: Sean Sjahrial, Johnnie Chang, Kenny Wong and Derrick Do.
 
 Blash ("Buy Low and Sell High") is a web app that aims to:
 
-* provide data visualization of the market
+* provide data visualization of the market, especially the S&P500
+* Start new investors with a basic of Indexes
 * inform stock investing decisions
 * predict the performance of a given stock service primarily beginner investors
 
