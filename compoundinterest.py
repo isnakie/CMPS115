@@ -1,6 +1,5 @@
 import math
-import plotly.plotly as py
-import plotly.graph_objs as go
+import matplotlib.pyplot as plt 
 
 principle = int( input("Starting principle: "))
 interest = int( input("Your interest rate: "))
@@ -23,25 +22,8 @@ def interestrates(p,i,m,n,t):
 		b.append(value);
 	return(value)
 
-trace0 = go.Scatter(
-	x = a,
-	y = b,
-	name = 'Years',
-	line = dict(
-		color = ('rgb(205, 12, 24)'),
-		width = 4
-		)
-	)
-
-data = [trace0]
-
-layout = dict(	title = 'Compound interest',
-				xaxis = dict( title = 'Number of years'),
-				yaxis = dict( title = 'Money'),
-	)
-
-fig = dict( data=data, layout=layout )
-py.iplot( fig, filename='styled-line' )
+lines = plt.plot(a, b)
+plt.setp(lines, color='b', linewidth = 2.0)
 
 result = interestrates(principle, percentage, month, number, years)
 print(result)
