@@ -2,10 +2,10 @@
 Created on April 13, 2016
 Reads a csv file containing stock market data and
 shows and saves a plot of the trend line,
-given optinal starting and ending date information.
+given optional starting and ending date information.
 Call makeChart() with return value of readFile()
 and a list of prices, e.g., ['Open','Close'].
-@author: Johnnie
+@author: Johnnie Chang
 """
 
 import argparse
@@ -16,9 +16,10 @@ import matplotlib.pyplot as plt
 import time
 from datetime import datetime
 
+# Months with 30 days.
 shortMonths = [4, 6, 9, 11]
 
-def readFile(file, startY=None, startM=None, startD=None, endY=None, endM=None, endD=None):
+def readFile(file, startY=None, startM=None, startD=None, endY=None, endM=None, endD=None, dateFormat=None):
   """
   Read the input csv file and return a pandas.DataFrame containing the data.
   :param file: The file name of the csv containing the market data.
@@ -31,16 +32,23 @@ def readFile(file, startY=None, startM=None, startD=None, endY=None, endM=None, 
   # Read in the file and parse the date strings.
   market = pd.read_csv(file, header = 0)
   parsedDates = []
-  format = '%m/%d/%y' # Yahoo Finance data date format
+  # Yahoo Finance data date format:
+  format = '%m/%d/%y'
+  # Use user format if given.
+  if dateFormat:
+    format = dateFormat
+
+  # Parse date information into a new column.
   for d in market['Date']:
     parsedDates.append(datetime.strptime(d, format))
   market['parsed'] = parsedDates
 
   earliestDate = market['parsed'][0]
   latestDate = market['parsed'][len(market['parsed'])-1]
+  thisY = datetime.today().year
 
   # Start date defaults to the beginning of the current year.
-  startDate = datetime(2016, 1, 1)
+  startDate = datetime(thisY, 1, 1)
   if startY:
     startDate = datetime(startY, startDate.month, startDate.day)
   if startM:
@@ -49,7 +57,8 @@ def readFile(file, startY=None, startM=None, startD=None, endY=None, endM=None, 
     startDate = datetime(startDate.year, startDate.month, startD)
   
   # End date defaults to the end of the current year.
-  endDate = datetime(2016, 12, 31)
+  endDate = datetime(thisY, 12, 31)
+  #endDate = latestDate
   if endY:
     endDate = datetime(endY, endDate.month, endDate.day)
   if endM:
