@@ -15,21 +15,23 @@ c = [];
 
 def interestrates(p,i,m,n,t):
 	compound = p;
-	c.append(p);
 	for x in range(1, t):
 		add = pow((1+(i/n)), (n*x) )
 		value = compound*add
-		compound = p + m;
+		compound = compound + m;
 		c.append(compound);
 		a.append(x);
 		b.append(value);
+	plt.figure()
+	lines = plt.plot(a, b)
+	plt.setp(lines, color='b', linewidth = 5.0)
+	plt.plot(a, c)
+	plt.setp(lines, color = 'y', linewidth = 5.0)
+	plt.savefig('compound.png')
+	plt.show()
 	return(value)
 
-lines = plt.plot(a, b)
-plt.setp(lines, color='b', linewidth = 2.0)
 
-line = plt.plot(a, c)
-plt.setp(line, color = 'y', linewidth = 2.0)
 
 result = interestrates(principle, percentage, month, number, years)
 print(result)
