@@ -23,10 +23,12 @@ def interestrates(p,i,m,n,t):
 		a.append(x);
 		b.append(value);
 	plt.figure()
+	line = plt.plot(a, c)
+	plt.setp(line, color = 'y', linewidth = 5.0)
 	lines = plt.plot(a, b)
 	plt.setp(lines, color='b', linewidth = 5.0)
-	plt.plot(a, c)
-	plt.setp(lines, color = 'y', linewidth = 5.0)
+	plt.xlabel('Years')
+	plt.ylabel('Amount')
 	plt.savefig('compound.png')
 	plt.show()
 	return(value)
