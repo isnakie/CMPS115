@@ -19,7 +19,8 @@ from datetime import datetime
 # Months with 30 days.
 shortMonths = [4, 6, 9, 11]
 
-def readFile(file, startY=None, startM=None, startD=None, endY=None, endM=None, endD=None, dateFormat=None):
+def readFile(inFile=None, startY=None, startM=None, startD=None,\
+             endY=None, endM=None, endD=None, dateFormat=None):
   """
   Read the input csv file and return a pandas.DataFrame containing the data.
   :param file: The file name of the csv containing the market data.
@@ -29,38 +30,82 @@ def readFile(file, startY=None, startM=None, startD=None, endY=None, endM=None, 
   :type startY, startM, startD, endY, endM, endD: int
   """
 
+  # Default to reading "StockDataFixed.csv" as input file.
+  file = "StockDataFixed.csv"
+  if inFile:
+    file = inFile
+
   # Read in the file and parse the date strings.
-  market = pd.read_csv(file, header = 0)
+  try:
+    market = pd.read_csv(file, header = 0)
+  except OSError as ose:
+    print("Please reconsider your input file:", ose)
+    return
   parsedDates = []
-  # Yahoo Finance data date format:
+  # Yahoo Finance data date format: mm/dd/yy.
   format = '%m/%d/%y'
   # Use user format if given.
   if dateFormat:
     format = dateFormat
 
   # Parse date information into a new column.
-  for d in market['Date']:
-    parsedDates.append(datetime.strptime(d, format))
+  try:
+    for d in market['Date']:
+      parsedDates.append(datetime.strptime(d, format))
+  except ValueError as ve:
+    print("Please reconsider your date format:",ve)
+    print()
+    return
   market['parsed'] = parsedDates
 
-  earliestDate = market['parsed'][0]
-  latestDate = market['parsed'][len(market['parsed'])-1]
+  #
+  latestDate = market['parsed'][0]
+  earliestDate = market['parsed'][len(market['parsed'])-1]
   thisY = datetime.today().year
+  defaultStartDate = datetime(thisY, 1, 1)
+  #defaultEndDate = datetime(thisY, 12, 31)
+  defaultEndDate = latestDate
+  print('The data used starts on', earliestDate.strftime("%B %d, %Y"),\
+        'and ends on', latestDate.strftime("%B %d, %Y."))
+  print()
 
   # Start date defaults to the beginning of the current year.
-  startDate = datetime(thisY, 1, 1)
+  startDate = defaultStartDate
   if startY:
-    startDate = datetime(startY, startDate.month, startDate.day)
+    try:
+      startDate = datetime(startY, startDate.month, startDate.day)
+    except ValueError as ve:
+      print("Please reconsider your starting year.")
+      print()
   if startM:
-    startDate = datetime(startDate.year, startM, startDate.day)
+    try:
+      startDate = datetime(startDate.year, startM, startDate.day)
+    except ValueError as ve:
+      print("Please reconsider your starting month.")
+      print()
   if startD:
-    startDate = datetime(startDate.year, startDate.month, startD)
-  
+    try:
+      startDate = datetime(startDate.year, startDate.month, startD)
+    except ValueError as ve:
+      print("Please reconsider your starting day.")
+      print()
+
+  # Start date should not be earlier than the earliest date in the data.
+  if startDate < earliestDate:
+    print("Your starting date is earlier than the earliest date in the data.")
+    print("Adjusting starting date to earliest date.")
+    print()
+    startDate = earliestDate
+
   # End date defaults to the end of the current year.
-  endDate = datetime(thisY, 12, 31)
+  endDate = defaultEndDate
   #endDate = latestDate
   if endY:
-    endDate = datetime(endY, endDate.month, endDate.day)
+    try:
+      endDate = datetime(endY, endDate.month, endDate.day)
+    except ValueError as ve:
+      print("Please reconsider your ending year.")
+      print()
   if endM:
     y,m,d = endDate.year, endM, endDate.day
     # Last day of Feb and other shorter months is not 31st.
@@ -68,15 +113,32 @@ def readFile(file, startY=None, startM=None, startD=None, endY=None, endM=None, 
       d = 28
     elif endM in shortMonths:
       d = 30
-    endDate = datetime(y, m, d)
+    try:
+      endDate = datetime(y, m, d)
+    except ValueError as ve:
+      print("Please reconsider your ending month.")
+      print()
   if endD:
-    endDate = datetime(endDate.year, endDate.month, endD)
+    try:
+      endDate = datetime(endDate.year, endDate.month, endD)
+    except ValueError as ve:
+      print("Please reconsider your ending year.")
+      print()
 
-  # @TODO Should this be handled in an interface file?
-  # Start date should not be later than end date
+  # End date should not be later than the latest date.
+  if endDate > latestDate:
+    print("Your ending date is later than the latest date in the data.")
+    print("Adjusting ending date to latest date.")
+    print()
+    endDate = latestDate
+
+  # Start date should not be later than end date.
   if startDate > endDate:
-    print("Weird input: starting date later than ending date")
-    return None
+    print("The ending date is earlier than the starting date.")
+    print("Adjusting ending date to the latest date.")
+    endDate = latestDate
+
+  #print('start:',startDate, 'end:',endDate)
 
   # if startDate < earliestDate:
   #   print("Weird input:")
@@ -93,8 +155,22 @@ def makeChart(market, prices):
   """
   Generates connected scatter plot, shows and saves to png.
   :param market:
-  :param prices: list of strings specifying the prices to be in the plot
+  :param prices: list of strings specifying the prices to be in the plot.
   """
+
+  # The readFile() call was not done successfully.
+  # TODO other data types given?
+  #print(type(market))
+  if market == None:
+    print("Please fix errors in input first.")
+    print()
+    return
+
+  # Empty list of prices to plot.
+  if len(prices) == 0:
+    print("Please input the prices to plot.")
+    print()
+    return
 
   plt.figure()
   colors = ['b','g','r','c','m','y','k']
