@@ -1,6 +1,3 @@
-10 stocks only.
-- can try to move tasks around to reduce load
-
 Sprint Review:
 - Website is online.
 - Wrote the calculator.
