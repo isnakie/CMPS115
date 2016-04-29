@@ -1,0 +1,19 @@
+10 stocks only.
+- can try to move tasks around to reduce load
+
+Sprint Review:
+- Website is online.
+- Wrote the calculator.
+- Can pull data and make graphs.
+
+- Visual Graphs: Finished
+- Calculator: Finished
+- Portfolio: NOT FINISHED
+
+Sprint Retrospective:
+- Start: 
+	- Having someone dedicated to booking rooms.
+	- Use Asana more.
+- Stop: 
+- Continue:
+	- Assigning tasks since everyone is quite capable.
