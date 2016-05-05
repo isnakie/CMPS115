@@ -1,0 +1,17 @@
+Sprint number: 2
+
+Sprint duration: 04/28-05/16
+
+Sprint master: Chung-Ning Chang
+
+Sprint backlog:
+1. As an investor, I want to have a visual overview of the stock prices over a given timeframe.
+    - Format for MPLD3
+    - Specify beginning date ranges to show the graph
+        E.g., 2 weeks, 1 month, 6 months, 1 year
+    - Show on Web2Py with buttons for selecting date ranges.
+2. As a stock portfolio manager, I want to input the stocks in my portfolio and see projections for it.
+    - Make tables
+    - Learn CSS and format tables
+    - Make and display side graphs
+    - Stock adding logic
