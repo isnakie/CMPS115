@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+<button onclick="graph('graph1')">Graph 1</button>
+<button onclick="graph('graph2')">Graph 2</button>
+
+<div id="graph1" class="graph">
+  <p>{{response.write(session.graph1, escape=False)}}</p>
+</div>
+
+<div id="graph2" class="graph">
+  <p>{{response.write(session.graph2, escape=False)}}</p>
+</div>
+
+<script>
+graph('graph1')
+
+function graph(num) {
+    var i;
+    var x = document.getElementsByClassName("graph");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(num).style.display = "block";
+}
+</script>
