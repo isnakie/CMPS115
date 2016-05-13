@@ -436,7 +436,8 @@ def graphDataMACDRSI(stock, MA1, MA2, dateRange=365):
         emaslow, emafast, macd = computeMACD(closep)
         ema9 = ExpMovingAverage(macd,nema) # signal line
         
-        
+# Version 3.0 MACD Portion
+# -------------------------------------------------------------------------------------------         
         ax2.plot(date, macd, color = 'w', label = 'MACD')
         ax2.plot(date, ema9, color = 'r', label = 'EMA')
         ax2.plot(date, constantFunc(0,date), color = 'yellow')
@@ -445,6 +446,7 @@ def graphDataMACDRSI(stock, MA1, MA2, dateRange=365):
         ax2LegText = pylab.gca().get_legend().get_texts()
         pylab.setp(ax2LegText[0:5], color = 'w')
         #ax2.fill_between(date, macd-ema9, 0, alpha = 0.5, facecolor = 'red', edgecolor = 'w')
+# -------------------------------------------------------------------------------------------         
 
         ax2.spines['bottom'].set_color("#5998ff")
         ax2.spines['top'].set_color("#5998ff")
