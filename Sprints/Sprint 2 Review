@@ -1,0 +1,18 @@
+Sprint Review:
+- Improved stock graphs and added graph tabs.
+- Fixed error with calculator graph.
+- Attempted to implement portfolio: have basic table and can submit/edit a single line.
+
+1. As an investor, I want to have a visual overview of the stock prices over a given timeframe.
+  Status: COMPLETE
+2. As a stock portfolio manager, I want to input the stocks in my portfolio and see projections for it.
+  Status: INCOMPLETE
+  
+Retrospective:
+- Start:
+  - Implementing a 2-3 day planning phase to see if we know how to implement the user story.
+  - Return to our sprint 1 roles (front-end, back-end, utility)
+  - More communication.
+- Stop:
+- Continue:
+  - Cleaning up the code.
