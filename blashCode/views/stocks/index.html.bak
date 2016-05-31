@@ -1,0 +1,54 @@
+{{extend 'layout.html'}}
+{{block mytitle}}
+<title>Stock</title>
+{{end}}
+<form>
+    Ticker Symbol <input name="sym" value={{=session.sym or ""}}>
+    <input type="submit" style="width: 80px"/>
+</form>
+<br/>
+<style>
+.description {
+    background: lightgrey;
+}
+.description .col {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+</style>
+<style type="text/css">
+.test {
+  column-width: 15em;
+  column-gap: 2em;   /* shown in yellow */            
+  column-rule: 4px solid green;
+  padding: 5px;      /* shown in blue */
+}
+p { margin: 0; padding: 0 }
+img { display: none }
+</style>
+
+<body>
+
+<!--  <iframe src="{{=URL('static/prices', 'AAPL.html')}}" width="500" height="500"></iframe>  -->
+    <h2>{{=TitleString}}</h2>
+<object data={{=graphURL or "https://blash.pythonanywhere.com/blash/static/prices/AAPL.html"}} width="650" height="600">
+    <embed src={{=graphURL or "https://blash.pythonanywhere.com/blash/static/prices/AAPL.html"}} width="600" height="400"> </embed>
+</object>
+    <h2>List of Stocks</h2>
+<div class = test>
+    <table class="table">
+        <tr>
+            <td style="max-width:300px;">Symbol</td>
+            <td style="max-width:20%;">Current Price</td>
+        </tr>
+        {{for row in WatchListRows:}}
+        <tr>
+            <td style="max-width:20%;"> <a href="{{=URL('show', args=row.id)}}"> {{=row.Symbol}}</a></td>
+            <td style="max-width:20%;">{{=row.Current_Price}}</td>
+        </tr>
+        {{pass}}
+        </table>
+    </div>
+
+</body>

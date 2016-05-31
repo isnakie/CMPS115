@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<h2>{{=company.Symbol}}</h2>
+<p>
+    Quantity of Stocks: {{=company.Quantity}}
+</p>
+<p>
+    Purchase Price: {{=company.Purchase_Price}}
+</p>
+<p>
+    Total Value when Purchased: {{=company.Current_Total}}
+</p>

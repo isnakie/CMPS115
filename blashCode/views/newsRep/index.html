@@ -1,0 +1,32 @@
+{{extend 'layout.html'}}
+{{block mytitle}}
+<title>News Reports</title>
+{{end}}
+
+<p></p>
+<form>
+    Enter ticker symbol for news: <input name="sym" value={{=session.sym or "AAPL"}}>
+    <input type="submit" style="width: 80px"/>
+</form>
+<br/>
+
+{{if len(session.articleLinks) > 0:}}
+    {{i=0}}
+    <ul class="list">
+        {{while i < len(session.articleLinks):}}
+        <li>
+            <h3>
+                <a href={{=session.articleLinks[i] or ""}} class="item-image">
+                    <img class="item-image-src" src={{=session.imageLinks[i] or ""}} alt="" title=""/>
+                    {{=session.titles[i] or ""}}
+                </a>
+                by {{=session.authors[i] or ""}}
+            </h3>
+        {{i = i + 1}}
+        </li>
+        {{pass}}
+    </ul>
+
+{{else:}}
+<p>{{=session.errMsg}}</p>
+{{pass}}

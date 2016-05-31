@@ -1,0 +1,8 @@
+{{extend 'layout.html'}}
+<h2>
+    {{=TickerIndex.Symbol}}
+</h2>
+
+<i>Post on </i>
+
+<p>{{=TickerIndex.Quantity}}</p>

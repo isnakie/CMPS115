@@ -1,0 +1,42 @@
+{{extend 'layout.html'}}
+<h1>A Beginner's Guide to Investing</h1>
+<h2>Types of Investments</h2>
+When most people think about investing, they often think about the stock market. Stocks are one type of investment, but there are many other types of investments as well. We'll define some of the most popular ones.<br>
+<h3>Stocks</h3>
+A stock is a portion of the company’s assets. When someone owns a stock in a company, they are a shareholder and have claim to a portion of the company’s earnings and assets. If the company goes bankrupt, the claim to the company’s assets means shareholders will be paid after their company has been liquidated (when all assets are sold) and anyone with higher claim gets paid (often banks and bondholders).
+<br>
+Some companies also offer dividends, meaning a person will get paid just by owning the stock, regardless of whether the company did well/poorly. Usually only established companies like Apple (AAPL) and General Motors (GM) offer dividends.
+<br>
+Owning a stock means if the company does well, then the stock value rises and the person’s net worth increases. The reverse is also true, which can make buying stocks a risk.
+<br>
+When people think of stock, they generally talk about “Common Stock”, which is what we talked about above. There are other types of stocks which offer different benefits and disadvantages for example preferred stock. Preferred stock have fixed dividends and if the company is liquidated, these stock holders get their money before common stock holders. However, the company may buy these stocks at anytime for any reason. There are many ways to customize stock. All of these are put together into a portfolio, which holds all current investments.
+<br>
+Finally, in order to purchase stock, a person can use a brokerage, companies like Fidelity, Charles Schwab, Vanguard. There are two types of brokerages, full-service and discount brokerages. Full-service offers advice and has more current news however charges a heavier fee where as a discount brokerage offers low interest but does offer personalized advice. Dividend reinvestment plans (DRIPS) lets individuals purchase stocks directly at low cost from the company.
+<br>
+<h2>Other Investment Types</h2>
+There are other investment types, such as shorts, bonds, mutual funds, and Exchange Traded Funds. When making a portfolio, it is good to have a diverse group of investments, so if one stock goes down, you won’t lose everything. We will talk about investment strategies once we go over some basic options available.
+<h3>Shorts</h3>
+A short is the opposite of a stock, where a person would be against the company. First, “sell” shorts to buyer and if the company’s value goes down, then “buy” the shorts back at a lower value.<br>
+A good reference is the movie “The Big Short”, where a group of individuals “shorted” (bought huge amounts shorts) the housing market in 2007. http://www.imdb.com/title/tt1596363/
+<h3>Bonds</h3>
+Bonds are similar to stock except the interest rate is fixed (coupon rate) and the pay date is set (maturity date).  Normally bonds don’t profit investors as much as stock, however bondholders have a set interest rate and will get their money before stockholders if the company is liquidated, thus bonds are safer. Just as stock there are a lot of options for bonds, but the principal is the same, a fixed rate over a period of time.
+<h3>Mutual Funds</h3>
+A group that pools money together to invest in a diverse market containing stocks, bonds and other investment tools. This allows a person with limited cash to buy into a certain market type (tech, pharma, banks) or even a risk market (high risk companies vs low risk companies). There is a managerial fee so it is a good idea to find a mutual fund with a low fee.
+https://personal.vanguard.com/us/funds/tools/recommendation
+<h3>ETF</h3>
+Exchange Traded Funds are similar to Mutual funds with a few exceptions. Firstly, it can be traded as long as the market is open, unlike a mutual fund which is daily. ETF’s cover a huge range of markets imaginable, one very common one is SPY, which is an ETF for the S&P 500.
+<h3>Why it’s important to know</h3>
+Saving a saving’s account is essential to gaining financial stability, however it does not combat inflation. After securing your finances for at least 3~6 months, it is worth understanding the benefits of the stock market. Also, many jobs offer great benefits such as 401(k) which doubles your retirement allocation. Other people also start an IRA and Roth IRA, which give tax benefits for retirement. These all use the stock market, and whether you decide to use a full-service broker or a discount broker, it is good to understand how the market is doing and where your money can be placed.
+<h2>How to Use Blash</h2>
+With this in mind, many of the aforementioned investments use the stock market in some way, so it's important to monitor it. Blash provides tools for tracking stocks from the S&P500. The S&P 500 are 500 companies chosen to represent U.S equities. Many stocks brokerages use the S&P500 as benchmarks and most can’t beat performance. We utilize this and instead of going through a middle man such as the SPY ETF, you can easily view the company’s prices, its momentum and its trends.
+<h3>Tutorial Page</h3>
+This teaches you the basics of stocks and how to use Blash. In fact, you're reading it right now.
+<h3>Stocks</h3>
+Type the ticker symbol of the stock you'd like to look at and hit submit. After some time, the price graph will appear, which you can view for the last 2 weeks, 1 month, 6 months, or 1 year. <br>
+The top line shows the Relative Strength Index, or RSI for short. It is an indicator that tries to find if a stock is overbought or oversold. If the line goes above the red line, it means it is probably overbought and it may be time to sell. If the line goes below the green line, it means it is probably oversold and it may be time to buy. <br>
+The bottom lines show the Moving Average Convergence/Divergence and Exponential Moving Average lines, or MACD and EMA respectively. If the white line falls below the red line, it may be time to sell the stock. Likewise, if the white line goes above the red line, it may be the time to sell. Other things to look for in these lines are when they diverge and when they rise dramatically. When they diverge, it signals that the current trend of the stock will probably end. If the white line rises dramatically, it is a signal that it is overbought.
+<h3>Portfolio</h3>
+You will need to create a login for Blash to use the portfolio. Here, you can input which stocks you are holding, how many you bought, and what you bought them for. You can then see how much they're currently worth. By clicking on the ticker symbol, you will be redirected to the stock page which will allow you to look at its price chart. <br>
+You can also add stocks you're interested in to the Watchlist, which will give you easy access to the current price of a given stock.
+<h3>Calculator</h3>
+This is a simple investment calculator that allows you to input how much money you are willing to invest, how much you're willing to contribute each month, how much interest you expect, and how often you will receive interest. Try seeing how much money you can get in 30 years if you invest $16,000 a year at an interest rate of 5% per year and see how much you can earn!

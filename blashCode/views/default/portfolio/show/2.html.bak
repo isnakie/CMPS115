@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+{{extend 'layout.html'}}
+
+<h2>
+    {{=TickerIndex.Symbol}}
+</h2>
+<h2>
+    {{=TickerIndex.Quantity}}
+</h2>
+<h2>
+    {{=TickerIndex.Purchase_Price}}
+</h2>

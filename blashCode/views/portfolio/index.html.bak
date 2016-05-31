@@ -1,0 +1,137 @@
+{{extend 'layout.html'}}
+{{block mytitle}}
+<title>Portfolio</title>
+{{end}}
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+    <style>
+    .side {
+       float: left;
+    }
+    .clearfix{
+    clear:both
+    }
+    p.padding {
+    padding-bottom: 2cm;
+    }
+    p.padding2 {
+        padding-bottom: 50%;
+    }
+    </style>
+</head>
+<body>
+<div>
+    <center>
+    <h2>Enter Stock</h2>
+    <div>
+        <div style="max-width:30%">
+        {{=form}}
+        </div>
+    </div></center>
+    <style>
+    a {
+        color: green;
+    }
+    </style>
+    <h2>Stock Portfolio</h2>
+    <table class="table">
+        <tr>
+            <td></td>
+            <td style="width:(100/7)%;">Symbol</td>
+            <td style="width:(100/7)%;">Quantity</td>
+            <td style="width:(100/7)%;">Purchase Price</td>
+            <td style="width:(100/7)%;">Current Price</td>
+            <td style="width:(100/7)%;">Total Asset When Bought</td>
+            <td style="width:(100/7)%;">Total Asset Now</td>
+            <td style="width:(100/7)%;">Capital Gain/Loss</td>
+        </tr>
+        {{for row in rows:}}
+        <tr>
+            <td color = "red"><a href ="{{=URL('delete', args = row.id)}}" style="color:red"> Delete </a></td>
+            <td style="width:(100/7)%;"> <a href="{{=URL('show', args=row.id)}}"> {{=row.Symbol}}</a></td>
+            <td style="width:(100/7)%;">{{=row.Quantity}}</td>
+            <td style="width:(100/7)%;">${{=row.Purchase_Price}}</td>
+            <td style="width:(100/7)%;">${{=row.Current_Price}}</td>
+            <td style="width:(100/7)%;">${{=row.Previous_Total}}</td>
+            <td style="width:(100/7)%;">${{=row.Current_Total}}</td>
+            <td style="width:(100/7)%;" class="cell1">{{=row.Gain_Loss}}</td>
+        </tr>
+        {{pass}}
+        </table>
+</div>
+<script>
+    $('.cell1').each(function() {
+        if($(this).text() >= 0) {
+            $(this).css('color', 'green');
+        }else if($(this).text()<0){
+            $(this).css('color','red')
+        }
+    });
+</script>
+    <p class="padding">
+    </p>
+<div class=side>
+    <title>Stock</title>
+    <form>
+        Ticker Symbol <input name="sym" value={{=session.sym or ""}}>
+        <input type="submit" style="width: 80px"/>
+    </form>
+    <br/>
+    <!--  <iframe src="{{=URL('static/prices', 'AAPL.html')}}" width="500" height="500"></iframe>  -->
+    <center><h2>{{=TitleString}}</h2></center>
+    <object data={{=graphURL or "https://blash.pythonanywhere.com/blash/static/prices/AAPL.html"}} width="650" height="600">
+        <embed src={{=graphURL or "https://blash.pythonanywhere.com/blash/static/prices/AAPL.html"}} width="600" height="400"> </embed>
+    </object>
+</div>
+
+    
+<div class= side>
+<div style="max-width:80%">
+    <h2 style="text-align: center;">Enter Stock to WatchList</h2>
+    <div>
+    {{=WatchForm}}
+</div>
+<h2>Watch List</h2>
+<table class="table" style="max-width:30%;">
+    <tr>
+        <td></td>
+        <td style="max-width:300px;">Symbol</td>
+        <td style="max-width:20%;">Current Price</td>
+    </tr>
+    {{for row in WatchListRows:}}
+    <tr>
+        <td color = "red"><a href ="{{=URL('watchDelete', args = row.id)}}" style="color:red"> Delete </a></td>
+        <td style="max-width:20%;"> <a href="{{=URL('show', args=row.id)}}"> {{=row.Symbol}}</a></td>
+        <td style="max-width:20%;">{{=row.Current_Price}}</td>
+    </tr>
+    {{pass}}
+    </table>
+</div>
+   
+<div class="clearfix"></div>
+
+</body>

@@ -1,0 +1,59 @@
+{{extend 'layout.html'}}
+{{block mytitle}}
+<title>Calculator</title>
+{{end}}
+<h1>Calculator</h1>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+</h1>
+<body onResume="session.clear()">
+
+<form>
+
+  Starting Principle <br> <input name="p" value={{=session.p or 0}}>
+  <br>
+  Interest Rate (e.g. 0.05) <br> <input name="i" value={{=session.i or 0}}>
+  <br>
+  Amount Added per Year <br> <input name="m" value={{=session.m or 0}}>
+  <br>
+  Times Compounded/Year <br> <input name="n" value={{=session.n or 1}}>
+  <br>
+  Years <br> <input name="t" value={{=session.t or 0}}>
+  <br>
+    
+  <input type="submit" style="width: 80px"/>
+  <input type='button' value='Reset' name='reset' onclick="return clearForm(this.form);"><br>
+  <img src="/static/compound.png" style="width:800px;height:450px;">
+</form>
+
+<script>
+    function clearForm(form) {
+        var $f = $(form);
+        var $f = $f.find(':input').not(':button, :submit, :reset, :hidden');
+        $f.val('').attr('value','').removeAttr('checked').removeAttr('selected');
+    }</script>
+</body>
+<h1>{{=session.interest or ""}}</h1>

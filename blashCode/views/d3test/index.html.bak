@@ -1,0 +1,2 @@
+{{extend 'layout.html'}}
+<h1>This is the d3test/index.html template</h1>

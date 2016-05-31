@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+{{block mytitle}}
+<title>News Reports</title>
+{{end}}
+
+<form>
+    Ticker Symbol <input name="sym" value={{=session.sym or ""}}>
+    <input type="submit" style="width: 80px"/>
+</form>
+<br/>
+<a href=session.articleLink or ""> session.title </a>

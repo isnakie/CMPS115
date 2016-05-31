@@ -1,0 +1,15 @@
+{{extend 'layout.html'}}
+<h1>Calculator</h1>
+</h1>
+<form>
+  Starting Principle <br> <input name="p" value={{=session.p or 0}}>
+  <br>
+  Interest Rate (i.e 0.05) <br> <input name="i" value={{=session.i or 0}}>
+  <br>
+  Times Compounded/Year <br> <input name="n" value={{=session.n or 0}}>
+  <br>
+  Years <br> <input name="t" value={{=session.t or 0}}>
+  <br>
+  <input type="submit" />
+</form>
+<h1>{{=session.interest or ""}}</h1>

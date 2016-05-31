@@ -1,0 +1,17 @@
+{{extend 'layout.html'}}
+{{block mytitle}}
+<title>Stock</title>
+{{end}}
+<form>
+    Ticker Symbol <input name="sym" value={{=session.sym or ""}}>
+    <input type="submit" style="width: 80px"/>
+</form>
+<br/>
+<body>
+
+<!--  <iframe src="{{=URL('static/prices', 'AAPL.html')}}" width="500" height="500"></iframe>  -->
+    <h2>{{=TitleString}}</h2>
+<object data={{="https://blash.pythonanywhere.com/blash/static/prices/AAPL.html"}} width="800" height="600">
+    <embed src={{="https://blash.pythonanywhere.com/blash/static/prices/AAPL.html"}} width="600" height="400"> </embed>
+</object>
+</body>
