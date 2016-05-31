@@ -1,0 +1,20 @@
+What we did:
+- Improved stocks page
+- News page
+- Portfolio page
+- Tutorial
+
+As a beginning user of the app, I want to learn to use this app, since this app will help me manage smart investments.
+  Status: COMPLETE
+As an on-the-go investor, I want to get quick textual reports about the (stock) market to provide information for my investing decisions.
+  Status: COMPLETE
+As a beginning investor, I’d like to learn the basics of investing and receive recommendations on what to buy, so I can easily start investing.
+  Status: INCOMPLETE (no recommendations)
+  
+Retrospective:
+Start
+- not applicable, this is the final release
+Stop
+- not showing up without a word
+Continue
+- learning how to use Scrum
