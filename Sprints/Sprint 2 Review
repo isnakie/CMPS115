@@ -1,7 +1,6 @@
 Sprint Review:
-- Improved stock graphs and added graph tabs.
-- Fixed error with calculator graph.
-- Attempted to implement portfolio: have basic table and can submit/edit a single line.
+- As a beginning Investor, I'd like to see the Improved stock graphs implemented onto the website.
+- As an investor, I'd like to see an implemented portfolio: have basic table and can submit/edit a single line.
 
 1. As an investor, I want to have a visual overview of the stock prices over a given timeframe.
   Status: COMPLETE
