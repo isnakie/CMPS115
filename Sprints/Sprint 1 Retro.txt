@@ -1,5 +1,5 @@
 Sprint Review:
-- Website is online.
+- As a beginning investor, I'd like a Website that is online, so I know where to go for good information on Stocks.
 - As a beginning investor, I’d like to see what my potential capital gain is given a principal value (how much I make with some amount), in order to conveniently see how much money I could make.
 - As an investor, I want to have a visual overview of the stock prices over a given timeframe, because I would like to predict future returns with past behaviors.
 
