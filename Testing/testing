@@ -1,1 +1,38 @@
 testing
+
+
+Tutorial Module:
+No testing needed other than loading the page, which is correctly done.
+
+Portfolio Module:
+Testing included entering various stock symbols, valid and invalid and seeing the results.
+  The valid results were correct with all stocks that are part of the system.
+  Invalid results were:
+    Only entering Symbol with no Quantity or purchase price
+      This results in an "Enter a value" message. This is resolved correctly
+    Entering an incorrect symbol into Stock or WatchList
+      This results in an error in the page
+    Entering an incorrect Symbol into search function
+      This results in default graph <AAPL>
+      
+Stock Module:
+Testing included looking up various different stocks
+  Entering an incorrect Symbol into search function
+      This results in default graph <AAPL> with incorrect title
+      
+News Module: 
+Testing included looking up various different stocks
+  Entering an incorrect Symbol into search function
+      This results in an error message "invalid stock"
+      
+Calculator Module:
+Testing included entering various values into the search functions.
+  This includes wrong inputs such as characters that are not ints, and commas
+    This results in error in the website.
+  The calculator includes a graph that is not refreshed until the actual page is refreshed. 
+    This is located in the python code and can be fixed if it manually refreshes the page. This only happens sometimes.
+  Another error is when the calculated number becomes too large, the code does not handle when the value is too large
+    This results in an error in the website.
+    
+The Admin Module:
+Not accessible by Normal Users
