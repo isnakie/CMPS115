@@ -1,0 +1,55 @@
+System and Unit Test Report
+Blash (Buy Low and Sell High)
+Blash
+June 6th, 2016
+
+SPRINT 1:
+- As a beginning investor, I'd like a Website that is online, so I know where to go for good information on Stocks.
+- As a beginning investor, I’d like to see what my potential capital gain is given a principal value (how much I make with some amount), in order to conveniently see how much money I could make.
+- As an investor, I want to have a visual overview of the stock prices over a given timeframe, because I would like to predict future returns with past behaviors.
+
+SPRINT 2:
+As a beginning investor, I’d like to see improved stock graphs implemented into Blash.
+As an investor, I'd like to see an implemented portfolio: have basic table and can submit/edit a single line.
+
+SPRINT 3:
+As a beginning user of the app, I want to learn to use this app and the basics of investing so I can make smart choices when picking stocks. 
+As an on-the-go investor, I want to get quick textual reports about the (stock) market to provide information for my investing decisions. 
+As an investor, I'd like to see an improved implemented portfolio with much better load time because 1 minute load times are too long.
+
+
+Scenario for Sprint 1:
+Go to Blash.pythonanywhere.com and view the homescreen. 
+Go to the calculator tab and enter in a principal amount and monthly additions for an amount of years to get a visual representation of the capital gain you can acquire.
+Enter a starting Principle: $<10000>
+Enter an interest: <.10> (10% per year)
+Enter amount added per year: $<12000> (1000 per month)
+Enter times compounded per year: <1>
+Enter how many years you want to calculate: <30> (years)
+This will return a graph (once refreshed), will show the difference between compound interest vs flat savings
+Click on the Stocks tab, and it will show a default <AAPL> stocks, this will be improved to be show any selected stock
+
+Scenario for Sprint 2:
+Go to the stocks tab and select a stock. Users should see a list of stocks from the S&P500, and the given stock prices for the past year. By clicking one of these stocks, users can change the graph. 
+“Ticker Symbol” = <ADBE> (Adobe) or by default <AAPL> (AAPL)
+This will change graphs
+Select the Portfolio tab and enter a stock into either the WatchList or the Stock selection, they will show up in their respective places. Type a stock above the graph to see projections and past trends.
+Enter a ticker Symbol: <ADBE> (Adobe)
+Enter a Quantity: <30> Shares
+Enter the Price when Purchased: $<100>
+This will enter a row containing the stock and its capital gain/loss
+
+Scenario for Sprint 3:
+Go to the Tutorials tab, which contains a list of basic tips for new investors as well as how to use BLASH.
+Go to the news tab and type in a stock index, this will return news relevant to the stock. These stocks are not customized with an algorithm, rather it’s just pulled from Investopedia.
+Enter a Stock Index: <AAPL>
+This will pull up relevant articles about that stock
+Select the Portfolio tab and enter a stock into either the WatchList or the Stock selection, they will show up in their respective places. Type a stock above the graph to see projections and past trends.
+Enter a ticker Symbol: <ADBE> (Adobe)
+Enter a Quantity: <30> Shares
+Enter the Price when Purchased: $<100>
+This will enter a row containing the stock and its capital gain/loss
+Enter a Stock you are interested into the WatchList: <GOOGL>
+This will enter a new row containing the stock and its current Price
+Enter  a Stock into the “Ticker Symbol”: <ADBE> (Adobe) or by default <AAPL> (AAPL)
+This will return a graph of that stock
