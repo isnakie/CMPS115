@@ -4,7 +4,7 @@ testing
 Tutorial Module:
 No testing needed other than loading the page, which is correctly done.
 
-Portfolio Module:
+Portfolio Module: (Sean)
 Testing included entering various stock symbols, valid and invalid and seeing the results.
   The valid results were correct with all stocks that are part of the system.
   Invalid results were:
@@ -15,17 +15,17 @@ Testing included entering various stock symbols, valid and invalid and seeing th
     Entering an incorrect Symbol into search function
       This results in default graph <AAPL>
       
-Stock Module:
+Stock Module: (Kenny)
 Testing included looking up various different stocks
   Entering an incorrect Symbol into search function
       This results in default graph <AAPL> with incorrect title
       
-News Module: 
+News Module: (Johnnie)
 Testing included looking up various different stocks
   Entering an incorrect Symbol into search function
       This results in an error message "invalid stock"
       
-Calculator Module:
+Calculator Module: (Kenny)
 Testing included entering various values into the search functions.
   This includes wrong inputs such as characters that are not ints, and commas
     This results in error in the website.
