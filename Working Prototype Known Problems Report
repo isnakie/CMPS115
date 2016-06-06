@@ -5,9 +5,15 @@ June 6th, 2016
  
 * In the portfolio, duplicate stocks that are entered will also be added to the portfolio. This failure is caused by not checking whether submissions are duplicates. This is only an issue if the purchase price is also identical. Otherwise it is a valid submission.
 
+* Entering an incorrect stock into the watchlist and stock portfolio will generate an error in the website. This can be resolved by checking whether the symbol is valid or not.
+
 * A couple of Stocks, BRK-B and BF-B, have characters not acceptable by our code read-in file, thus they were omitted. This can be fixed if we either: manually enter the code for those specific stocks, or allow the characters to be acceptable.
 
-* The calculator includes a graph that is not refreshed until the actual page is refreshed. This is located in the python code and can be fixed if it manually refreshes the page.
+* The calculator includes a graph that is not refreshed until the actual page is refreshed. This is located in the python code and can be fixed if it manually refreshes the page. This only occurs sometimes, and we haven’t located the specific area of problem
+
+* For the calculator, there is no error checking, so any values that are not correct will give an error on the actual page. This can be changed by checking the inputs before the function is loaded.
+
+* Another error is when the calculated number becomes too large, the code does not handle when the value is too large which results in an error in the website.
 
 * As of right now, the user functionality is shut down because web2py’s automatic login was not functioning the way we desired. So there is only 1 user per session. This can be fixed by including the user functionality back into the code and editing its properties.
 
