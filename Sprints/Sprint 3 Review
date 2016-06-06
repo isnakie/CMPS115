@@ -10,7 +10,9 @@ As an on-the-go investor, I want to get quick textual reports about the (stock) 
   Status: COMPLETE
 As a beginning investor, I’d like to learn the basics of investing and receive recommendations on what to buy, so I can easily start investing.
   Status: INCOMPLETE (no recommendations)
-  
+As an on-the-go investor, I want to get quick textual reports about the (stock) market to provide information for my investing decisions. 
+
+
 Retrospective:
 Start
 - not applicable, this is the final release
